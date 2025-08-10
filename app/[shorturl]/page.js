@@ -12,15 +12,15 @@ export default async function Page({ params }) {
     redirect(`${process.env.NEXT_PUBLIC_HOST}`);
   }
 
-  const now = new Date();
+  const nowUTC = new Date();
 
   // If activationDateTime exists and current time is before it
-  if (doc.activation && now < new Date(doc.activation)) {
+  if (doc.activation && nowUTC < new Date(doc.activation)) {
     redirect(`${process.env.NEXT_PUBLIC_HOST}/noactivation`);
   }
 
   // If expiryDateTime exists and current time is after it
-  if (doc.expiry && now > new Date(doc.expiry)) {
+  if (doc.expiry && nowUTC > new Date(doc.expiry)) {
     redirect(`${process.env.NEXT_PUBLIC_HOST}/expired`);
   }
 

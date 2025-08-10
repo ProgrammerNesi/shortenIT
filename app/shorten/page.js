@@ -59,8 +59,8 @@ export default function Page() {
     const raw = JSON.stringify({
       "url": url,
       "shorturl": shortUrl,
-      "activation": activationDate,
-      "expiry": expiryDate
+      "activation": activationDate ? new Date(activationDate).toISOString() : null,
+      "expiry": expiryDate ? new Date(expiryDate).toISOString() : null
     });
 
     const requestOptions = {
