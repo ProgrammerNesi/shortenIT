@@ -70,7 +70,7 @@ export default function Page() {
       redirect: "follow"
     };
 
-    fetch("http://localhost:3000/api/generate", requestOptions)
+    fetch("/api/generate", requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setGenerated(`${process.env.NEXT_PUBLIC_HOST}/${shortUrl}`)
