@@ -4,6 +4,7 @@ import Navbar from "@/componenets/Navbar";
 import { Poppins } from 'next/font/google';
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import Footer from "@/componenets/Footer";
 
 
 config.autoAddCss = false;
